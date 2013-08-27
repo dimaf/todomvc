@@ -36,6 +36,7 @@
                 // Initialize the app
                 TodoModel.findAll({}, function (todos) {
                     new TodoControll('#todoapp', {
+                        Model:TodoModel,
                         todos: todos,
                         state: can.route,
                         view: 'pages/todo/todos.ejs'

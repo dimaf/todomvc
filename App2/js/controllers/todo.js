@@ -1,5 +1,5 @@
 /*global can Models*/
-define(["can","js/models/todo"], function (can,TodoModel) {
+define(["can"], function (can) {
 	'use strict';
 
 	var ENTER_KEY = 13;
@@ -21,20 +21,18 @@ define(["can","js/models/todo"], function (can,TodoModel) {
 		// Listen for when a new Todo has been entered
 		'#new-todo keyup': function (el, e) {
 		    var value = can.trim(el.val());
-		    var self = this;
 			if (e.keyCode === ENTER_KEY && value !== '') {
-			    new TodoModel({
+			    new this.options.Model({
 					text : value,
 					complete : false
 				}).save(function (item) {
 				    el.val('');
-				    self['{TodoModel} created'](null, null, item);
 				});
 			}
 		},
 
 		// Handle a newly created Todo
-		'{TodoModel} created': function (list, e, item) {
+		'{Model} created': function (list, e, item) {
 			this.options.todos.push(item);
 			// Reset the filter so that you always see your new todo
 			this.options.state.attr('filter', '');
