@@ -2,6 +2,12 @@
 // http://go.microsoft.com/fwlink/?LinkID=232446
 (function () {
     "use strict";
+    require.config({
+        paths: {
+            jquery: 'Scripts/jquery-2.0.3',
+            can:'Scripts/lib/can'
+        }
+    });
 
     WinJS.Binding.optimizeBindingReferences = true;
 
@@ -22,17 +28,24 @@
             if (app.sessionState.history) {
                 nav.history = app.sessionState.history;
             }
-            require(["js/navigator"], function () {
-                args.setPromise(WinJS.UI.processAll().then(function () {
-                
-                    if (nav.location) {
-                        nav.history.current.initialPlaceholder = true;
-                        return nav.navigate(nav.location, nav.state);
-                    } else {
-                        return nav.navigate(Application.navigator.home);      
-                    }
-                }));
-            });
+            require(["jquery", "can", "js/models/todo.js", "js/controllers/todo.js"], function ($, can,TodoModel,TodoControll) {
+                can.route(':filter');
+                // Delay routing until we initialized everything
+                can.route.ready(false);
+
+                // Initialize the app
+                TodoModel.findAll({}, function (todos) {
+                    new TodoControll('#todoapp', {
+                        todos: todos,
+                        state: can.route,
+                        view: 'pages/todo/todos.ejs'
+                    });
+                });
+
+                // Now we can start routing
+                can.route.ready(true);
+            })
+         
         }
     });
 

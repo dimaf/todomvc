@@ -48,32 +48,75 @@
     <TargetPlatformVersion>8.0</TargetPlatformVersion>
     <DefaultLanguage>en-US</DefaultLanguage>
     <PackageCertificateKeyFile>App2_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
   </PropertyGroup>
   <ItemGroup>
     <AppxManifest Include="package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="css\default.css" />
+    <Content Include="css\base.css" />
+    <Content Include="css\bg.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\logo.svg" />
     <Content Include="images\smalllogo.png" />
     <Content Include="images\splashscreen.png" />
     <Content Include="images\storelogo.png" />
-    <Content Include="js\data.js" />
+    <Content Include="js\controllers\todo.js" />
     <Content Include="js\default.js" />
-    <Content Include="js\navigator.js" />
+    <Content Include="js\models\todo.js" />
     <Content Include="packages.config" />
-    <Content Include="pages\itemDetail\itemDetail.css" />
-    <Content Include="pages\itemDetail\itemDetail.html" />
-    <Content Include="pages\itemDetail\itemDetail.js" />
-    <Content Include="pages\groupDetail\groupDetail.css" />
-    <Content Include="pages\groupDetail\groupDetail.html" />
-    <Content Include="pages\groupDetail\groupDetail.js" />
-    <Content Include="pages\groupedItems\groupedItems.css" />
-    <Content Include="pages\groupedItems\groupedItems.html" />
-    <Content Include="pages\groupedItems\groupedItems.js" />
     <Content Include="default.html" />
+    <Content Include="pages\todo\todos.ejs" />
     <Content Include="Scripts\almond.js" />
-    <Content Include="Scripts\can.js" />
+    <Content Include="Scripts\jquery-2.0.3.intellisense.js" />
+    <Content Include="Scripts\jquery-2.0.3.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.js" />
+    <Content Include="Scripts\jquery-2.0.3.min.map" />
+    <Content Include="Scripts\lib\can.js" />
+    <Content Include="Scripts\lib\can\localstorage.js" />
+    <Content Include="Scripts\lib\can\construct.js" />
+    <Content Include="Scripts\lib\can\construct\proxy.js" />
+    <Content Include="Scripts\lib\can\construct\super.js" />
+    <Content Include="Scripts\lib\can\control.js" />
+    <Content Include="Scripts\lib\can\control\plugin.js" />
+    <Content Include="Scripts\lib\can\control\route.js" />
+    <Content Include="Scripts\lib\can\model.js" />
+    <Content Include="Scripts\lib\can\model\queue.js" />
+    <Content Include="Scripts\lib\can\observe.js" />
+    <Content Include="Scripts\lib\can\observe\attributes.js" />
+    <Content Include="Scripts\lib\can\observe\backup.js" />
+    <Content Include="Scripts\lib\can\observe\compute.js" />
+    <Content Include="Scripts\lib\can\observe\delegate.js" />
+    <Content Include="Scripts\lib\can\observe\setter.js" />
+    <Content Include="Scripts\lib\can\observe\validations.js" />
+    <Content Include="Scripts\lib\can\route.js" />
+    <Content Include="Scripts\lib\can\util\array\each.js" />
+    <Content Include="Scripts\lib\can\util\bind.js" />
+    <Content Include="Scripts\lib\can\util\can.js" />
+    <Content Include="Scripts\lib\can\util\deferred.js" />
+    <Content Include="Scripts\lib\can\util\dojo.js" />
+    <Content Include="Scripts\lib\can\util\event.js" />
+    <Content Include="Scripts\lib\can\util\fixture.js" />
+    <Content Include="Scripts\lib\can\util\fragment.js" />
+    <Content Include="Scripts\lib\can\util\hashchange.js" />
+    <Content Include="Scripts\lib\can\util\jquery.js" />
+    <Content Include="Scripts\lib\can\util\library.js" />
+    <Content Include="Scripts\lib\can\util\mootools.js" />
+    <Content Include="Scripts\lib\can\util\object.js" />
+    <Content Include="Scripts\lib\can\util\object\isplain.js" />
+    <Content Include="Scripts\lib\can\util\string.js" />
+    <Content Include="Scripts\lib\can\util\string\deparam.js" />
+    <Content Include="Scripts\lib\can\util\yui.js" />
+    <Content Include="Scripts\lib\can\util\zepto.js" />
+    <Content Include="Scripts\lib\can\view.js" />
+    <Content Include="Scripts\lib\can\view\ejs.js" />
+    <Content Include="Scripts\lib\can\view\elements.js" />
+    <Content Include="Scripts\lib\can\view\live.js" />
+    <Content Include="Scripts\lib\can\view\modifiers.js" />
+    <Content Include="Scripts\lib\can\view\mustache.js" />
+    <Content Include="Scripts\lib\can\view\node_lists.js" />
+    <Content Include="Scripts\lib\can\view\render.js" />
+    <Content Include="Scripts\lib\can\view\scanner.js" />
     <Content Include="Scripts\require.js" />
     <None Include="App2_TemporaryKey.pfx" />
   </ItemGroup>
